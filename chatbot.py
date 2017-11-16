@@ -15,8 +15,6 @@ def is_file():
         f = open(os_path, 'w')
         f.close()
 
-
-
 #读取字典库
 def readbase():
     f = open('potbase.txt', 'r')
@@ -35,6 +33,10 @@ def writebase():
         word = str(i)+ ':' + speakdict[i] +'\n'
         file.write(word)
     file.close()
+
+#搜索模式
+def nowtime():
+    print(time.strftime('%Y-%m-%d %H:%M:%S',time.localtime()))
 
 #训练模式
 def train():
@@ -71,6 +73,8 @@ def chat():
                 print(speakdict[k])
                 work = True
                 break
+            if key in "时间几点":
+                nowtime()
             else:
                 work = False
     while work == False:
