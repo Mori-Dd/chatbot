@@ -93,6 +93,10 @@ def save():
     else:
         label.config(text="请输入标题")
 
+#退出
+def quit():
+    os._exit(0)
+
 #创建工作目录
 initDiary()
 
